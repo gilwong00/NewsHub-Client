@@ -2,6 +2,8 @@
 // standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import App from './App';
+import store from './store/index'
+import axios from 'axios';
 //import router from './router';
 import { MdButton, MdContent, MdTabs, MdApp, MdList, MdIcon, MdToolbar } from 'vue-material/dist/components';
 import 'vue-material/dist/vue-material.min.css';
@@ -15,9 +17,12 @@ Vue.use(MdList);
 Vue.use(MdIcon);
 Vue.use(MdToolbar);
 
+
+
 /* eslint-disable no-new */
 new Vue({
-    el: '#app',
     //router,
+    store: store,
+    el: '#app',
     render: h => h(App)
 });

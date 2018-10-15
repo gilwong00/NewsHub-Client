@@ -1,22 +1,28 @@
 <template>
-    <md-tabs class="md-primary" md-sync-route>
-        <md-tab id="tab-home" md-label="Home"></md-tab>
-        <md-tab id="tab-pages" md-label="Pages"></md-tab>
-        <md-tab id="tab-posts" md-label="Posts"></md-tab>
-        <md-tab id="tab-favorites" md-label="Favorites"></md-tab>
+    <md-tabs class='md-primary' md-sync-route md-alignment='centered'>
+        <md-tab v-for='c in allCategories' v-bind:key='c.CategoryId' v-bind:md-label='c.CategoryName'></md-tab>
     </md-tabs>
 </template>
 
 <style>
-    .md-tabs-navigation {
-        margin: 0 auto;
-    }
+   
 </style>
 
 <script>
-    //need to get list of sections from the db
+    //mapGetters allows us to connect to all getters we have in the application, Getters gets information from our state 
+    import { mapActions, mapGetters } from 'Vuex';
+    
     export default {
-        name: 'AppSections'
+        name: 'AppSections',
+        methods: {
+            ...mapActions(['fetchCategories'])
+        },
+        computed: {
+             ...mapGetters(['allCategories'])
+        },
+        created() {
+            this.fetchCategories();
+        }
     }
 </script>
 
