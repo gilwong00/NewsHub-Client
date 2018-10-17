@@ -2,6 +2,9 @@
     <div>
         <app-navbar></app-navbar>
         <app-sections></app-sections>
+        <div>
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 

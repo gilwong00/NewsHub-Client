@@ -1,11 +1,16 @@
 <template>
     <md-tabs class='md-primary' md-sync-route md-alignment='centered'>
-        <md-tab v-for='c in allCategories' v-bind:key='c.CategoryId' v-bind:md-label='c.CategoryName'></md-tab>
+        <md-tab v-for='c in allCategories' v-bind:key='c.CategoryId' v-bind:md-label='c.CategoryName' v-bind:to=createPath(c.CategoryId) md-active></md-tab>
     </md-tabs>
 </template>
 
-<style>
-   
+<style lang='css'>
+    div.md-tabs {
+        padding-top: 2% !important;
+    }
+    .md-button-content {
+       color: black;
+    }
 </style>
 
 <script>
@@ -15,7 +20,10 @@
     export default {
         name: 'AppSections',
         methods: {
-            ...mapActions(['fetchCategories'])
+            ...mapActions(['fetchCategories']),
+            createPath(articleId) {
+                return '/articles/' +  articleId;
+            }
         },
         computed: {
              ...mapGetters(['allCategories'])
