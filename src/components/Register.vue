@@ -1,17 +1,19 @@
 <template>
-    <div class="form-container">
-        <div class="form-group">
-                <h1>{{title}}</h1>
-                <h1>{{user.register_firstName}}</h1>
-                <h1>{{user.register_lastName}}</h1>
-                <h1>{{user.register_email}}</h1>
-                <h1>{{user.register_password}}</h1>
-                <h1>{{user.register_confirmedPassword}}</h1>
+    <div class="AppRegister">
+        <div class="form-control">
+            <div class="form-group">
+            <h1>{{title}}</h1>
+            <input>{{user.register_firstName}}</input>
+            <input>{{user.register_lastName}}</input>
+            <input>{{user.register_email}}</input>
+            <input>{{user.register_password}}</input>
+            <input>{{user.register_confirmedPassword}}</input>
+            </div>
         </div>
     </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 </style>
 
 <script>
@@ -21,11 +23,11 @@ export default {
     return {
       title: "Register",
       user: {
-        register_firstName: "fName",
-        register_lastName: "lName",
-        register_email: "userEmail",
-        register_password: "userPassword",
-        register_confirmedPassword: "userConfirmedPassword"
+        register_firstName: "reigsterFirstName",
+        register_lastName: "registerLastName",
+        register_email: "registerEmail",
+        register_password: "registerPassword",
+        register_confirmedPassword: "registerConfirmedPassword"
       }
     };
   }
