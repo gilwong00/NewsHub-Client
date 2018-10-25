@@ -8,7 +8,8 @@
                     </md-button>
                     <span class='md-title'>Programmers Hub</span>
                 </div>
-                <div class='md-toolbar-section-end'>
+                 <div class='md-toolbar-section-end'>
+                    <md-button>Register</md-button>
                     <md-button>Sign In</md-button>
                 </div>
             </div>
@@ -20,24 +21,24 @@
 </template>
 
 <style lang='css' scoped>
-    .md-app {
-        height: 68px !important;
-    }
+.md-app {
+  height: 68px !important;
+}
 
-   .md-app-toolbar {
-       background-color: orangered;
-   }
+.md-app-toolbar {
+  background-color: orangered;
+}
 
-   .md-button:hover {
-       background-color: #fff;
-   }
+.md-button:hover {
+  background-color: #fff;
+}
 </style>
 
 <script>
 export default {
-    name: 'AppNavbar',
-    data: () => ({
-        menuVisible: false
-    })
+  name: "AppNavbar",
+  data: () => ({
+    menuVisible: false
+  })
 };
 </script>
