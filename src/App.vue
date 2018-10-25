@@ -13,7 +13,6 @@
 import AppNavbar from "./components/Navbar.vue";
 import AppSections from "./components/Sections.vue";
 import AppRegister from "./components/Register.vue";
-
 export default {
   name: "App",
   components: {
