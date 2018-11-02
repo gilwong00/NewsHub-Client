@@ -5,19 +5,12 @@ import App from './App';
 import store from './store/index'
 import axios from 'axios';
 import router from './router';
-import { MdButton, MdContent, MdTabs, MdApp, MdList, MdIcon, MdToolbar, MdTable } from 'vue-material/dist/components';
+import InitMaterial from './materialWrapper';
 import 'vue-material/dist/vue-material.min.css';
 Vue.config.productionTip = false;
 
-Vue.use(MdButton);
-Vue.use(MdContent);
-Vue.use(MdTabs);
-Vue.use(MdApp);
-Vue.use(MdList);
-Vue.use(MdIcon);
-Vue.use(MdToolbar);
-Vue.use(MdTable);
-
+//load material UI theme
+InitMaterial();
 
 /* eslint-disable no-new */
 new Vue({
