@@ -8,8 +8,12 @@
                     </md-button>
                     <span class='md-title'>Programmers Hub</span>
                 </div>
-                <div class='md-toolbar-section-end'>
-                    <md-button>Sign In</md-button>
+                <div v-if='isLoggedIn' class='md-toolbar-section-end'>
+                    <md-button>Sign Out</md-button>
+                </div>
+                <div v-if='!isLoggedIn' class='md-toolbar-section-end'>
+                    <md-button>Sign in</md-button>
+                    <md-button v-on:click='navigateToSignup()'>Sign Up</md-button>
                 </div>
             </div>
         </md-app-toolbar>
@@ -34,10 +38,17 @@
 </style>
 
 <script>
-export default {
-    name: 'AppNavbar',
-    data: () => ({
-        menuVisible: false
-    })
-};
+    import { mapActions, mapGetters } from 'Vuex';
+
+    export default {
+        name: 'AppNavbar',
+        methods: {
+           navigateToSignup() {
+                this.$router.push('/Signup');
+           }
+        },
+        computed: {
+            ...mapGetters(['isLoggedIn'])
+        }
+    };
 </script>

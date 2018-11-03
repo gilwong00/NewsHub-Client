@@ -9,7 +9,8 @@ import {
     MdToolbar,
     MdTable,
     MdCard,
-    MdRipple
+    MdRipple,
+    MdForm
 } from 'vue-material/dist/components';
 
 const InitMaterial = () => {
@@ -23,6 +24,7 @@ const InitMaterial = () => {
     Vue.use(MdTable);
     Vue.use(MdCard);
     Vue.use(MdRipple);
+    //Vue.use(MdForm)
 };
 
 export default InitMaterial;
